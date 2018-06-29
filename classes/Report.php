@@ -175,7 +175,7 @@ class Report implements \JsonSerializable
 		
 		$setRowColor( $sheet, $cellY, "20B2AA" );
 		
-		
+		//write every check to table
 		foreach( $this->checks as $check )
 		{
 			++$cellY;

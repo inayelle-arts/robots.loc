@@ -14,6 +14,7 @@ spl_autoload_register( function( string $class )
 	require_once $class;
 } );
 
+//get data about report to export
 $exists   = $_POST["exists"];
 $status   = (int)$_POST["status"];
 $fileSize = (int)$_POST["filesize"];
@@ -22,6 +23,7 @@ $hosts    = (int)$_POST["hosts"];
 
 $report = new \classes\Report( $exists, $status, $fileSize, $hosts, $sitemaps );
 
+//convert to xlsx
 $xlsx   = $report->toXLSX();
 $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($xlsx, "Xlsx");
 header( 'Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' );
