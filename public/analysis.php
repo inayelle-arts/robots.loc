@@ -18,18 +18,22 @@ spl_autoload_register( function( string $class )
 	require_once $class;
 } );
 
+//get given url, append with robots.txt
 $url = $_POST["url"];
 $url .= "/robots.txt";
 
+//perform request for file
 $curl = new CURL( $url );
 $curl->get();
 
+//initialize data
 $status       = $curl->status;
 $exists       = false;
 $hostCount    = 0;
 $siteMapCount = 0;
 $fileSize     = 0;
 
+//if file was found and successfully downloaded, fill data
 if( $status === 200 )
 {
 	$exists       = true;
@@ -40,8 +44,10 @@ if( $status === 200 )
 	$fileSize     = $robots->fileSize;
 }
 
+//create report from taken data
 $report = new Report( $exists, $status, $fileSize, $hostCount, $siteMapCount );
 
+//counter for table
 $checkCount = 0;
 ?>
 
@@ -51,7 +57,7 @@ $checkCount = 0;
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="public/css/styles.css?v=<?= $refresh ?>" type="text/css">
+	<link rel="stylesheet" href="public/css/styles.css" type="text/css">
 	<link rel="stylesheet" href="public/css/bootstrap/bootstrap.min.css" type="text/css">
 	<title>Robots.txt analyzer</title>
 </head>
@@ -87,6 +93,7 @@ $checkCount = 0;
 			</tr>
 			</thead>
 			<tbody>
+<!--			output performed checks-->
 			<?foreach( $report->checks as $check ):?>
 				<tr>
 					<th scope="row"><?= ++$checkCount ?></th>

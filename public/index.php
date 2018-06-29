@@ -1,4 +1,5 @@
 <?php
+//refresh resources
 $refresh = rand();
 ?>
 

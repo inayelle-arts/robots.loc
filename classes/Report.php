@@ -21,6 +21,7 @@ class Report implements \JsonSerializable
 	/** @var Check[] $checks */
 	private $checks = [];
 	
+	//text constants
 	private const FILE_EXISTS_CHECK_NAME  = "Checking file robots.txt";
 	private const FILE_EXISTS_OK_MSG      = "File robots.txt found";
 	private const FILE_EXISTS_NOT_OK_MSG  = "File robots.txt not found";

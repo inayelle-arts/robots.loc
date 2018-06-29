@@ -27,6 +27,10 @@ class CURL
 		curl_setopt( $this->curl, CURLOPT_FOLLOWLOCATION, true );
 	}
 	
+	/**
+	 * Perform a get request
+	 * Result stored in $response
+	 */
 	public function get() : void
 	{
 		$result         = curl_exec( $this->curl );
