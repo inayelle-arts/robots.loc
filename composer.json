@@ -1,0 +1,14 @@
+{
+    "name": "inayellearts/robots.loc",
+    "description": "robots.txt scanner",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Vladislav Kalashnikov-Travin",
+            "email": "inayelle.arts@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.3"
+    }
+}

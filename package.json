@@ -1,0 +1,29 @@
+{
+  "name": "robots.loc",
+  "version": "1.0.0",
+  "description": "robots.txt scanner",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inayelle-arts/robots.loc.git"
+  },
+  "keywords": [
+    "robots.txt"
+  ],
+  "author": "inayelle.arts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inayelle-arts/robots.loc/issues"
+  },
+  "homepage": "https://github.com/inayelle-arts/robots.loc#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-typescript": "^5.0.0-alpha.2",
+    "typescript": "^2.9.2"
+  }
+}
